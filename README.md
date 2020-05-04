@@ -1,6 +1,5 @@
 [![CircleCI](https://circleci.com/gh/josegalarceh/devops-microservices.svg?style=svg)](https://circleci.com/gh/josegalarceh/devops-microservices)
 
-
 ## Project Overview
 
 In this project, you will apply the skills you have acquired in this course to operationalize a Machine Learning Microservice API. 
@@ -31,9 +30,30 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 
 ### Running `app.py`
 
-1. Standalone:  `python app.py`
-2. Run in Docker:  `./run_docker.sh`
-3. Run in Kubernetes:  `./run_kubernetes.sh`
+#### Standalone:
+`app.py` contains the web app built using flask framework.
+
+`python app.py`
+
+#### Run in Docker:  
+`run_docker.sh` contains the script to run the app in the docker.
+
+`./run_docker.sh`
+
+#### Run in Kubernetes: 
+`run_kubernetes.sh` contains the script to run app in the Kubernetes.
+
+`./run_kubernetes.sh`
+
+### Verify that application is running
+`make_prediction.sh` contains the script to check the predictions.
+
+`./make_prediction.sh`
+
+### Upload to Docker Hub
+`upload_docker.sh` contains the script to upload the docker image to the Docker Hub.
+
+`./upload_docker.sh`
 
 ### Kubernetes Steps
 
@@ -41,3 +61,7 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 * Setup and Configure Kubernetes locally
 * Create Flask app in Container
 * Run via kubectl
+
+### Kubernetes Clean Up
+- `kubectl delete deployment.apps/development`
+- `kubectl delete svc development`
