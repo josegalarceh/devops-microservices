@@ -36,3 +36,17 @@ $ kubectl logs app-548c8b4d77-f6sxx
 0     0  6.575  296.0     15.3  396.9   4.98
 [2020-05-05 00:45:30,291] INFO in app: prediction: [20.35373177134412]
 192.168.65.3 - - [05/May/2020 00:45:30] "POST /predict HTTP/1.1" 200 -
+
+$ kubectl get all
+NAME                       READY   STATUS    RESTARTS   AGE
+pod/app-548c8b4d77-f6sxx   1/1     Running   0          14m
+
+NAME                 TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+service/app          LoadBalancer   10.109.39.232   localhost     8000:32222/TCP   14m
+service/kubernetes   ClusterIP      10.96.0.1       <none>        443/TCP          17m
+
+NAME                  READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/app   1/1     1            1           14m
+
+NAME                             DESIRED   CURRENT   READY   AGE
+replicaset.apps/app-548c8b4d77   1         1         1       14m
